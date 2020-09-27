@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>益聊论坛</title>
+<meta name="viewport"
+  content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css"
+  href="bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css"
+  href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+  <header>
+    <!-- 为了居中 -->
+    <div class="container">
+      <div class="text-right">
+        <small>graduate</small> <b>有人笑着说解脱,有人哭着说舍不得,这就是我们的毕业季!</b>
+      </div>
+    </div>
+  </header>
+  <nav>
+    <!--导航标签 -->
+    <div class="container">
+      <h1>
+        <b>益聊论坛</b> <small>人生匆匆,且行且珍惜.</small>
+      </h1>
+      <!-- 导航条 -->
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">论坛首页</a></li>
+        <li><a href="list.html">论坛文章</a></li>
+        <li><a href="send.html">发布论坛</a></li>
+        <li><a href="prize.html">幸运抽奖</a></li>
+        <li><a href="address.html">收货地址</a></li>
+      </ul>
+      <!-- 右侧导航条 -->
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <!-- 导航条中出现文本时按照以下写法 -->
+        </li>
+        <li><a href="login.html">退出登录</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- 主体内容区域 -->
+  <section>
+    <!-- 为了居中 -->
+    <div class="container">
+      <!-- 划分3:1的区域 -->
+      <div class="row">
+        <div class="col-md-9">
+          <!-- page-header为了添加分割线 -->
+          <h2 class="page-header">
+            <span class="fa fa-star-o"> 最近心情</span>
+          </h2>
+          <!-- 第一篇文章开始 -->
+          <div class="jumbotron">
+            <!-- 巨幕 -->
+            <div class="container">
+              <!-- 居中 -->
+              <!-- 两等分 -->
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- 设置响应式图片+圆角 -->
+                  <!-- @{} url路径表达式 
+                      ${} 变量表达式
+                  -->
+                  <img class="img-responsive img-rounded"
+                   th:src="@{'images/'+${first.imgName}}"
+                    src="images/img1.jpg">
+                </div>
+                <div class="col-md-6">
+                  <!-- 文章标题 -->
+                  <h3 class="row1">
+                    <a th:text=${first.title} href="article.html"> 毕业季：“烧钱”不应成为青春的纪念仪式</a>
+                  </h3>
+                  <!-- 摘要 -->
+                  <p th:text=${first.abs} class="row4">栀子花开，梧桐叶茂，许多身着学士服、硕士服、博士服，兴奋地举着相机的年轻面庞在校园里渐渐多了起来。这提醒着我们，又是一年毕业季了。
+
+对当代大学生来说，隆重的毕业宴、精致的写真集、精心策划的毕业旅行、拿得出手的毕业礼物，这些似乎都成了标配。他们在热闹喧腾中给自己一个阶段的人生旅程划上句点。但拿出账本仔细算算，以这种方式纪念青春无疑有些昂贵。
+
+近日，中青报联合问卷网，对1969名经历过毕业季的受访者进行调查。结果显示，42.8%的受访者为庆祝毕业花费了3000元以上，更有不少人坦言自己花费了10000元以上。在这笔开销中，聚餐、旅游常常占了大头；送礼、写真、换手机也是重要组成。
+
+这些支出真是刚需吗？毕业一定得和“烧钱”划上等号吗？我认为，过度消费不仅没能让许多毕业生从中获得享受，反而成了他们新焦虑的来源。青春的纪念不必非要烧钱，有展现青年人活力、创意的更好方式。
+
+毕业季为何成了“烧钱季”？对许多毕业生来说，为了证明自己大方而抢着买单、在虚荣心驱使下互相攀比成了重要原因。在学校里沉迷学习时经济差距尚不明显，可毕业关头却成了财力的展示——人家在五星级办宴会，你却蹲校门口烧烤摊；人家毕业周游世界，你却只能在小花园看蚂蚁……相比之下，刚出社会，似乎不烧钱者或无能力烧钱者在起跑线上被甩开了一大截。由此推导出，毕业季就是烧钱秀，打肿脸也要充胖子。
+
+在许多人观念中，现代消费社会讲究“金钱至上”。大学生若是受到这种观念的潜移默化，即使受过“人人平等”的价值教育，常常也很难摆脱成见。但与有工作能自食其力者不同，刚毕业的学生大多缺乏收入来源，经济尚处于依赖父母阶段，而毕业消费这笔账不少也记在了父母的头上。家境殷实者暂且不论，对于大部分家庭普通乃至贫寒者来说，无视物质条件为了撑面子而过度消费，不仅没能履行一个成年人对家庭应负起的义务，反而加重了父母负担。更重要的是，它违背了毕业即独立、成长的内涵。
+
+所以，不应追求所谓成人世界的通行方式——以烧钱来纪念青春、庆祝毕业，青年人应有青年人的姿态，那是一种创意无限、充满热忱的姿态，一首激情荡漾的诗、一曲饱含温情的歌抑或是同学、师友间真诚的祝福，都可以成为纪念大学时代、拥抱人生新阶段的意义载体。
+
+毕业既是许多人学生生活的终点，也是真正独立的起点。具备独立思考的能力应成为受过高等教育的毕业生应有的素质。与其为了攀比大肆挥霍，把钱花在所谓的仪式上，不如将其用来提升相关能力，为增强自己的社会竞争力做好准备。
+                  </p>
+                  <p th:text="'作者:'+${first.userName}">作者:猪八戒</p>
+                  <span th:each="t : ${first.tags}">
+                    <a class="btn btn-info btn-xs" 
+                      href="list.html" 
+                      th:text=${t.title}>学生</a>
+                  </span> 
+                  <a th:remove="all" class="btn btn-info btn-xs" href="list.html">毕业</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 第一篇文章结束 -->
+          <!-- 第2-4篇开始 -->
+          <div class="row">
+            <div th:each="a : ${second}" class="col-md-4">
+              <!-- 第二篇文章开始 -->
+              <div class="thumbnail">
+                <img class="img-responsive img-rounded"
+                  th:src="@{'images/'+${a.imgName}}"
+                  src="images/img15.jpg">
+                <div class="caption">
+                  <h3 class="row1">
+                    <a href="article.html"> 我们的毕业季</a>
+                  </h3>
+                  <p th:text="'作者:'+${a.userName}">作者:admin</p>
+                  <p>
+                    <span th:each="t : ${a.tags}"> 
+                    <a th:text=${t.title} class="btn btn-info btn-xs" href="list.html">校园</a>
+                    </span>
+                    <a th:remove="all" class="btn btn-info btn-xs" href="list.html">学生</a>
+                  </p>
+                </div>
+              </div>
+              <!-- 第二篇文章结束 -->
+            </div>
+            <div th:remove="all" class="col-md-4">
+              <!-- 第三篇文章开始 -->
+              <div class="thumbnail">
+                <img class="img-responsive img-rounded"
+                  src="images/img16.jpg">
+                <div class="caption">
+                  <h3 class="row1">
+                    <a href="article.html"> 毕业季经典祝福：青春不散场！</a>
+                  </h3>
+                  <p>作者:admin</p>
+                  <p>
+                    <a class="btn btn-info btn-xs" href="list.html">毕业</a>
+                  </p>
+                </div>
+              </div>
+              <!-- 第三篇文章结束 -->
+            </div>
+            <div th:remove="all" class="col-md-4">
+              <!-- 第四篇文章开始 -->
+              <div class="thumbnail">
+                <img class="img-responsive img-rounded"
+                  src="images/img19.jpg">
+                <div class="caption">
+                  <h3 class="row1">
+                    <a href="article3.html"> 勿忘初心，求得始终</a>
+                  </h3>
+                  <p>作者:admin</p>
+                  <p>
+                    <a class="btn btn-info btn-xs" href="list.html">毕业</a>
+                  </p>
+                </div>
+              </div>
+              </div>
+              <!-- 第四篇文章结束 -->
+            
+          </div>
+          <!-- 第2-4篇结束 -->
+          <!-- 第5-8篇开始 -->
+          <!-- 第五篇开始 -->
+          <!-- 面板组件 -->
+          <div th:each="a : ${normal}" class="panel panel-default">
+            <div class="panel-body">
+              <!-- 添加8:4的一行 -->
+              <div class="row">
+                <div class="col-md-8">
+                  <h3 class="row1">
+                    <a th:text=${a.title} href="article4.html">又是一年毕业季</a>
+                  </h3>
+                  <p th:text=${a.abs} class="row4">岁月如歌，我们的欢笑洒遍校园的每个角落；时光飞梭，我们的离别钟声敲响在每个人的心头。毕业之际，紧紧握手，道声珍重，一路好走，来日方长，相约聚首！</p>
+                </div>
+                <div class="col-md-4">
+                  <!-- 右侧图片 -->
+                  <img class="img-responsive img-rounded"
+                    th:src="@{'images/'+${a.imgName}}"
+                    src="images/default.jpg">
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <!-- 底部 -->
+              <div class="row">
+                <div class="col-md-3">
+                  <span class="fa fa-calendar" th:text=${a.updatedStr}> 2018-10-19 11:50</span>
+                </div>
+                <div class="col-md-2">
+                  <span th:text=${a.viewCount} class="fa fa-eye"> 3</span>
+                </div>
+                <div class="col-md-2">
+                  <span th:text=${a.commentCount} class="fa fa-comment-o"> 0</span>
+                </div>
+                <div class="col-md-3">
+                  <span th:each="t : ${a.tags}">
+                    <a th:text=${t.title} class="btn btn-info btn-xs" href="list.html">论坛</a>
+                  </span>
+                  <a th:remove="all" class="btn btn-info btn-xs" href="list.html">热门</a>
+                  <a th:remove="all" class="btn btn-info btn-xs" href="list.html">毕业</a>
+                </div>
+                <div class="col-md-2">作者:admin</div>
+              </div>
+            </div>
+          </div>
+          <!-- 第五篇结束 -->
+          <!-- 第6篇开始 -->
+          <!-- 面板组件 -->
+          <div th:remove="all" class="panel panel-default">
+            <div class="panel-body">
+              <!-- 添加8:4的一行 -->
+              <div class="row">
+                <div class="col-md-8">
+                  <h3 class="row1">
+                    <a href="article3.html">青春绽放 挥别四载师生情 梦想领航 萧红学子展风流——萧红</a>
+                  </h3>
+                  <p class="row4">从那昂扬的姿态与整齐的步伐中，我们看到了师生们心中的期待与梦想；从那磅礴的士气和铿锵的口号里，我们听出了学子们心底的誓言与豪情。那一道道鲜红的条幅、一个个整齐的方阵、一张张青春的脸庞，不仅展现着2019届学子们的士气与斗志，更让彰显着2019届师生冲击目标、创造辉煌的无限希望！</p>
+                </div>
+                <div class="col-md-4">
+                  <!-- 右侧图片 -->
+                  <img class="img-responsive img-rounded"
+                    src="images/img28.jpg">
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <!-- 底部 -->
+              <div class="row">
+                <div class="col-md-3">
+                  <span class="fa fa-calendar"> 2018-10-19 11:39</span>
+                </div>
+                <div class="col-md-2">
+                  <span class="fa fa-eye"> 1</span>
+                </div>
+                <div class="col-md-2">
+                  <span class="fa fa-comment-o"> 0</span>
+                </div>
+                <div class="col-md-3">
+                  <a class="btn btn-info btn-xs" href="list.html">学生</a>
+                  <a class="btn btn-info btn-xs" href="list.html">毕业</a>
+                </div>
+                <div class="col-md-2">作者:admin</div>
+              </div>
+            </div>
+          </div>
+          <!-- 第6篇结束 -->
+          <!-- 第7篇开始 -->
+          <!-- 面板组件 -->
+          <div th:remove="all" class="panel panel-default">
+            <div class="panel-body">
+              <!-- 添加8:4的一行 -->
+              <div class="row">
+                <div class="col-md-8">
+                  <h3 class="row1">
+                    <a href="article5.html">毕业季，就像夏天的暖风，将我们推向新的起点</a>
+                  </h3>
+                  <p class="row4">柳荫下握别心怀惆怅，同窗数载情深意长，千种思绪涌上心房，生活的
+
+小舟又将起航，六月毕业季，愿友情化为奋进的力量！早日实现心中的梦想！</p>
+                </div>
+                <div class="col-md-4">
+                  <!-- 右侧图片 -->
+                  <img class="img-responsive img-rounded"
+                    src="images/img6.jpg">
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <!-- 底部 -->
+              <div class="row">
+                <div class="col-md-3">
+                  <span class="fa fa-calendar"> 2018-10-17 14:40</span>
+                </div>
+                <div class="col-md-2">
+                  <span class="fa fa-eye"> 21</span>
+                </div>
+                <div class="col-md-2">
+                  <span class="fa fa-comment-o"> 0</span>
+                </div>
+                <div class="col-md-3">
+                  <a class="btn btn-info btn-xs" href="list.html">毕业</a>
+                </div>
+                <div class="col-md-2">作者:admin</div>
+              </div>
+            </div>
+          </div>
+          <!-- 第7篇结束 -->
+          <!-- 第8篇开始 -->
+          <!-- 面板组件 -->
+          <div th:remove="all" class="panel panel-default">
+            <div class="panel-body">
+              <!-- 添加8:4的一行 -->
+              <div class="row">
+                <div class="col-md-8">
+                  <h3 class="row1">
+                    <a href="article.html">时光真是匆匆，眨眼间，毕业了</a>
+                  </h3>
+                  <p class="row4">你可记得，他们每天清晨，疾步走入教室的身影；你可记得，办公室
+
+中，他们忙进忙出得身影；你可记得，他们批作业时，带着倦容的身影？是的，他们，是我们的老师。时
+
+光真是匆匆，眼间，毕业了，三年时光成为历史，回顾这三年来的点点滴滴，忍不住思绪纷飞，感慨万千
+
+。老师们那一张张或慈祥，或严厉的脸庞，在脑海中浮现不止，再也忍不住热泪盈眶。</p>
+                </div>
+                <div class="col-md-4">
+                  <!-- 右侧图片 -->
+                  <img class="img-responsive img-rounded"
+                    src="images/img10.jpg">
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <!-- 底部 -->
+              <div class="row">
+                <div class="col-md-3">
+                  <span class="fa fa-calendar"> 2018-11-23 11:19</span>
+                </div>
+                <div class="col-md-2">
+                  <span class="fa fa-eye"> 0</span>
+                </div>
+                <div class="col-md-2">
+                  <span class="fa fa-comment-o"> 0</span>
+                </div>
+                <div class="col-md-3">
+                  <a class="btn btn-info btn-xs" href="list.html">喜欢</a>
+                </div>
+                <div class="col-md-2">作者:admin</div>
+              </div>
+            </div>
+          </div>
+          <!-- 第8篇结束 -->
+          <!-- 第5-8篇结束 -->
+        </div>
+        <div class="col-md-3">
+          <!-- page-header为了添加分割线 -->
+          <h2 class="page-header">
+            <span class="fa fa-thumbs-o-up"> 推荐阅读</span>
+          </h2>
+          <!-- 文章搜索开始 -->
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-heading">
+              <h3>
+                <span class="fa fa-search"> 论文搜索</span>
+              </h3>
+            </li>
+            <li class="list-group-item">
+              <!-- 表单 -->
+              <form action="SearchServlet" class="form-inline">
+                <div class="form-group">
+                  <input id="keyword_input" name="keyword" type="text"
+                    class="form-control" placeholder="请输入文章标题">
+                </div>
+                <button type="submit" class="btn btn-default">
+                  <span class="fa fa-search"></span>
+                </button>
+              </form>
+            </li>
+          </ul>
+          <!-- 文章搜索结束 -->
+          <!-- 最新内容开始 -->
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-heading">
+              <h3>
+                <span class="fa fa-calendar"> 最新内容</span>
+              </h3>
+            </li>
+            <li th:each="a : ${newList}" class="list-group-item">
+            <a th:text=${a.title} class="row1"
+              href="article2.html">毕业季经典祝福：青春不散场</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article3.html">青春绽放 挥别四载师生情 梦想领航 萧红学子展风流——萧红</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article4.html">又是一年毕业季</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article5.html">毕业季，就像夏天的暖风，将我们推向新的起点</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article6.html">时光真是匆匆，眨眼间，毕业了</a></li>
+          </ul>
+          <!-- 最新内容结束 -->
+            <!-- 评论最热开始 -->
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-heading">
+              <h3>
+                <span class="fa fa-comment-o"> 评论最热</span>
+              </h3>
+            </li>
+            <li th:each="a : ${commentList}" class="list-group-item">
+            <a th:text=${a.title} class="row1"
+              href="article7.html">岁月如歌，我们的欢笑洒遍校园的每个角落</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article8.html">六月，总要曲终人散</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article9.html">同窗是缘分的引子，彼此做对方的影子</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article5.html">毕业季，就像夏天的暖风，将我们推向新的起点</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article4.html">又是一年毕业季</a></li>
+          </ul>
+          <!-- 评论最热结束 -->
+           <!-- 浏览最多开始 -->
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-heading">
+              <h3>
+                <span class="fa fa-eye"> 浏览最多</span>
+              </h3>
+            </li>
+            <li th:each="a : ${viewList}" class="list-group-item">
+            <a th:text=${a.title} class="row1"
+              href="article8.html">六月，总要曲终人散</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article2.html">毕业季经典祝福：青春不散场</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article7.html">岁月如歌，我们的欢笑洒遍校园的每个角落</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article4.html">又是一年毕业季</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article9.html">同窗是缘分的引子，彼此做对方的影子</a></li>
+          </ul>
+          <!-- 浏览最多结束 -->
+            <!-- 分类标签开始 -->
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-heading">
+              <h3>
+                <span class="fa fa-tag"> 分类标签</span>
+              </h3>
+            </li>
+            <li th:each="t : ${tags}" class="list-group-item">
+            <a th:text="${t.title}+'('+${t.referenceCount}+')'" class="row1"
+              href="article.html">学生(6)</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article.html">毕业季(5)</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article.html">离别(4)</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article.html">朋友(3)</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="article.html">工作(5)</a></li>
+          </ul>
+          <!-- 分类标签结束 -->
+          <!-- 友情链接开始 -->
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-heading">
+              <h3>
+                <span class="fa fa-link"> 友情链接</span>
+              </h3>
+            </li>
+            <li th:each="l : ${links}" class="list-group-item">
+            <a th:text=${l.title} class="row1"
+              th:href=@{${l.address}} href="http://www.163.com">网易</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="http://www.baidu.com">百度</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="http://www.bing.com">必应</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="http://www.qq.com">腾讯</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="http://www.jd.com">京东</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="http://www.taobao.com">淘宝</a></li>
+            <li th:remove="all" class="list-group-item"><a class="row1"
+              href="http://www.tmall.com">天猫</a></li>
+          </ul>
+          <!-- 友情链接结束 -->
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="well">
+    <div class="container">
+      <!-- 为了居中 -->
+       <b>有人笑着说解脱,有人哭着说舍不得,这就是我们的毕业季!</b>
+    </div>
+  </footer>
+</body>
+<script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="bootstrap3/js/holder.js"></script>
+<script type="text/javascript" src="bootstrap3/js/html5shiv.min.js"></script>
+<script type="text/javascript"
+  src="bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="bootstrap3/js/respond.min.js"></script>
+</html>

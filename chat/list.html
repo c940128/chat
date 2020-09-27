@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>益聊论坛</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<!-- 自定义样式 -->
+		<link rel="stylesheet" type="text/css" href="css/layout3.css" />
+	</head>
+
+	<body>
+		<!--网页最上方的留白-->
+		<header>
+			<div class="container">
+				<span class="pull-right">
+					<small>graduate</small> <b>有人笑着说解脱,有人哭着说舍不得,这就是我们的毕业季!</b>
+				</span>
+			</div>
+		</header>
+		<!--网页 导航栏 在layout.css 文件中设置在背景图片-->
+		<nav>
+			<!-- class.container 容器定位 用于设置内容居中 -->
+			<div class="container">
+				<h1>
+        			<b>益聊论坛</b> <small>人生匆匆,且行且珍惜.</small>
+      </h1>
+      <!-- 导航条 -->
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">论坛首页</a></li>
+				        <li><a href="list.html">论坛文章</a></li>
+				        <li><a href="send.html">发布论坛</a></li>
+				        <li><a href="prize.html">幸运抽奖</a></li>
+				        <li><a href="address.html">收货地址</a></li>
+					</ul>
+					<!-- class="nav navbar-nav" 定义导航条 向右侧浮动 -->
+					<ul class="nav navbar-nav navbar-right">
+						<!-- 导航条中的文字使用 class="navbar-text" 样式 -->
+						<li><span class="navbar-text">用户：</span></li>
+						<li><a href="login.html">退出登录</a></li>
+					</ul>
+				</div>
+				<!-- /导航栏 -->
+			</div>
+		</nav>
+		<section>
+			<div class="container">
+				<div class="row">
+					<!--左侧主要内容-->
+					<div class="col-md-9">
+						<h2 class="page-header">
+							<span class="fa fa-list"></span> 论坛列表
+						</h2>
+						<!--第一篇-->
+						<div th:each="a : ${list}" class="panel panel-default">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-8">
+										<h3 class="row-1">
+										<a th:text=${a.title}
+                                    th:href="@{'ArticleServlet?oId='+${a.oId}}" href="article2.html">啊！让我们扬风远航，即使遇到无数的困难与挫折</a>
+									</h3>
+										<p th:text=${a.abs} class="row-5">
+											同学两年，花前月下，指点江山，蓝天白云，也有乌云成群，月转星移
+
+，没有分离那有相聚，朋友挥手说声“再会”，祝你鹏程万里！
+										</p>
+									</div>
+									<div class="col-md-4">
+										<img
+                                           th:src="@{'images/'+${a.imgName}}"
+                                           src="images/img16.jpg" class="img-rounded img-responsive" />
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer">
+								<div class="row">
+									<div class="col-md-3">
+										<span class="fa fa-calendar" th:text=${a.updatedStr}> 2019-10-19 11:50</span>
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-eye" th:text=${a.viewCount}> 3</span>
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-comment-o" th:text=${a.commentCount}> 0</span>
+									</div>
+									<div class="col-md-3">
+                                       <span th:each="t : ${a.tags}">
+										<a th:text=${t.title} class="btn btn-info btn-xs" href="list.html">学生</a>
+										</span>
+                                        <a th:remove="all" class="btn btn-info btn-xs" href="list.html">离别</a>
+										<a th:remove="all" class="btn btn-info btn-xs" href="list.html">毕业</a>
+									</div>
+									<div class="col-md-2">
+										<span th:text="'作者:' +${a.userName}" class="pull-right">作者：admin</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--第二篇-->
+						<div th:remove="all" class="panel panel-default">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-8">
+										<h3 class="row-1">
+										<a href="article3.html">那些年的死党</a>
+									</h3>
+										<p class="row-5">
+											有一种友谊叫同甘共苦，有一段缘份叫朝夕相伴，有一抹回忆叫嬉戏打
+
+闹，有一份相知叫袒露心声，有一种离别叫毕业季节，我亲爱的同学，以后的记得好好生活，记得永远快
+
+乐。
+										</p>
+									</div>
+									<div class="col-md-4">
+										<img src="images/img22.jpg" class="img-rounded img-responsive" />
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer">
+								<div class="row">
+									<div class="col-md-3">
+										<span class="fa fa-calendar"></span> 2019-10-19 11:39
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-eye"></span> 1
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-comment-o"></span> 0
+									</div>
+									<div class="col-md-3">
+										<a class="btn btn-info btn-xs" href="list.html">伤感</a>
+										<a class="btn btn-info btn-xs" href="list.html">毕业</a>
+									</div>
+									<div class="col-md-2">
+										<span class="pull-right">作者：admin</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--第三篇-->
+						<div th:remove="all" class="panel panel-default">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-8">
+										<h3 class="row-1">
+										<a href="article6.html">轻轻地我走了，正如我轻轻地来了</a>
+									</h3>
+										<p class="row-5">
+											同窗是缘分的引子，彼此做对方的影子。课堂上有抢过本子，食堂里有
+
+夺过筷子。偶尔玩笑说你呆子，情深似成长的种子。毕业了，真心祝福朋友幸福一辈子，过顺利好日子。
+										</p>
+									</div>
+									<div class="col-md-4">
+										<img src="images/img29.jpg" class="img-rounded img-responsive" />
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer">
+								<div class="row">
+									<div class="col-md-3">
+										<span class="fa fa-calendar"></span> 2019-10-17 14:40
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-eye"></span> 21
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-comment-o"></span> 0
+									</div>
+									<div class="col-md-3">
+										<a class="btn btn-info btn-xs" href="list.html">再见</a>
+									</div>
+									<div class="col-md-2">
+										<span class="pull-right">作者：admin</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--第四篇-->
+						<div th:remove="all" class="panel panel-default">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-8">
+										<h3 class="row-1">
+										<a href="article7.html">六月，总要曲终人散</a>
+									</h3>
+										<p class="row-5">
+											你可记得，他们每天清晨，疾步走入教室的身影；你可记得，办公室
+
+中，他们忙进忙出得身影；你可记得，他们批作业时，带着倦容的身影？是的，他们，是我们的老师。时
+
+光真是匆匆，眼间，毕业了，三年时光成为历史，回顾这三年来的点点滴滴，忍不住思绪纷飞，感慨万千
+
+。老师们那一张张或慈祥，或严厉的脸庞，在脑海中浮现不止，再也忍不住热泪盈眶。
+										</p>
+									</div>
+									<div class="col-md-4">
+										<img src="images/img15.jpg" class="img-rounded img-responsive" />
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer">
+								<div class="row">
+									<div class="col-md-3">
+										<span class="fa fa-calendar"></span> 2019-11-23 11:19
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-eye"></span> 0
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-comment-o"></span> 0
+									</div>
+									<div class="col-md-3">
+										<a class="btn btn-info btn-xs" href="list.html">游戏</a>
+									</div>
+									<div class="col-md-2">
+										<span class="pull-right">作者：admin</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--第五篇-->
+						<div th:remove="all" class="panel panel-default">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-8">
+										<h3 class="row-1">
+										<a href="article4.html">此去年年，风雨与谁同路</a>
+									</h3>
+										<p class="row-5">
+											看着熟悉且已习惯的很多东西，我开始回忆。我想，我是从心底眷恋这里的，至少它占据了我三年的
+
+时光，或悲或喜，或好或坏。我在这里成熟，在这里变化，在三年的时间里，尽情挥霍了我的青春，对我
+
+来说，那是年轻。
+										</p>
+									</div>
+									<div class="col-md-4">
+										<img src="images/img23.jpg" class="img-rounded img-responsive" />
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer">
+								<div class="row">
+									<div class="col-md-3">
+										<span class="fa fa-calendar"></span> 2019-10-27 15:50
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-eye"></span> 3
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-comment-o"></span> 0
+									</div>
+									<div class="col-md-3">
+										<a class="btn btn-info btn-xs" href="list.html?tid=25">心情</a>
+										<a class="btn btn-info btn-xs" href="list.html?tid=12">八卦</a>
+									</div>
+									<div class="col-md-2">
+										<span class="pull-right">作者：admin</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--第六篇-->
+						<div th:remove="all" class="panel panel-default">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-8">
+										<h3 class="row-1">
+										<a href="article6.html">毕业季，就像夏天的暖风，将我们推向新的起点</a>
+									</h3>
+										<p class="row-5">
+											毕业季,挥别的是手臂,更近的是心灵,——致我们终将逝去的青春之毕
+
+业季暂别。再见,这个夏天的六月!毕业歌曲第1位:《睡在我上铺的兄弟》演唱:老狼煽情指数:9流泪指
+
+数:8.5简介:毕业了,那些一起相处的日子不会再有了,永远不能忘记——睡在我上铺的兄弟...
+										</p>
+									</div>
+									<div class="col-md-4">
+										<img src="images/img19.jpg" class="img-rounded img-responsive" />
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer">
+								<div class="row">
+									<div class="col-md-3">
+										<span class="fa fa-calendar"></span> 2019-10-11 15:41
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-eye"></span> 26
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-comment-o"></span> 3
+									</div>
+									<div class="col-md-3">
+										<a class="btn btn-info btn-xs" href="list.html?tid=49">演员</a>
+										<a class="btn btn-info btn-xs" href="list.html?tid=55">电影</a>
+										<a class="btn btn-info btn-xs" href="list.html?tid=12">八卦</a>
+									</div>
+									<div class="col-md-2">
+										<span class="pull-right">作者：admin</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--第七篇-->
+						<div th:remove="all" class="panel panel-default">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-8">
+										<h3 class="row-1">
+										<a href="article3.html">同窗是缘分的引子，彼此做对方的影子</a>
+									</h3>
+										<p class="row-5">
+											岁月如歌，我们的欢笑洒遍校园的每个角落；时光飞梭，我们的离别钟
+
+声敲响在每个人的心头。毕业之际，紧紧握手，道声珍重，一路好走，来日方长，相约聚首！
+										</p>
+									</div>
+									<div class="col-md-4">
+										<img src="images/img7.jpg" class="img-rounded img-responsive" />
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer">
+								<div class="row">
+									<div class="col-md-3">
+										<span class="fa fa-calendar"></span> 2019-10-17 14:47
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-eye"></span> 20
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-comment-o"></span> 3
+									</div>
+									<div class="col-md-3">
+										<a class="btn btn-info btn-xs" href="list.html?tid=49">演员</a>
+										<a class="btn btn-info btn-xs" href="list.html?tid=12">八卦</a>
+										<a class="btn btn-info btn-xs" href="list.html?tid=28">游戏</a>
+									</div>
+									<div class="col-md-2">
+										<span class="pull-right">作者：admin</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--第八篇-->
+						<div th:remove="all" class="panel panel-default">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-8">
+										<h3 class="row-1">
+										<a href="article9.html">毕业了！真的要走了</a>
+									</h3>
+										<p class="row-5">
+											有一种友谊叫同甘共苦，有一段缘份叫朝夕相伴，有一抹回忆叫嬉戏打
+
+闹，有一份相知叫袒露心声，有一种离别叫毕业季节，我亲爱的同学，以后的记得好好生活，记得永远快
+
+乐。
+										</p>
+									</div>
+									<div class="col-md-4">
+										<img src="images/img6.jpg" class="img-rounded img-responsive" />
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer">
+								<div class="row">
+									<div class="col-md-3">
+										<span class="fa fa-calendar"></span> 2019-11-08 11:05
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-eye"></span> 9
+									</div>
+									<div class="col-md-2">
+										<span class="fa fa-comment-o"></span> 0
+									</div>
+									<div class="col-md-3">
+										<a class="btn btn-info btn-xs" href="list.html">游戏</a>
+									</div>
+									<div class="col-md-2">
+										<span class="pull-right">作者：admin</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--分页链接-->
+						<div>
+							<span><a href="list.html" class="btn btn-default">上一页</a></span>
+							<span><a href="list.html" class="btn btn-default">下一页</a></span>
+							<span>当前1页，共4页，每页8条</span>
+						</div>
+					</div>
+					<!--左侧内容结束-->
+					<!--右侧内容开始-->
+					<div class="col-md-3">
+
+						<h2 class="page-header">
+							<span class="fa fa-thumbs-o-up" ></span> 推荐阅读
+						</h2>
+						<!--搜索-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-heading">
+								<h3><span class="fa fa-search"></span> 论坛搜索</h3></li>
+							<li class="list-group-item">
+								<form class="form-inline" action="list.html" method="get">
+									<!-- form-group 定义一项输入数据，必须包含label标签和input标签 -->
+									<div class="form-group">
+										<!-- 通过为 label 设置 .sr-only 类将其隐藏 -->
+										<label class="sr-only" for="title">请输入论坛标题</label>
+										<!-- form-control 声明表单输入控件，用在input元素上 -->
+										<input type="text" class="form-control" id="title" name="title" placeholder="请输入文章标题">
+									</div>
+									<button type="submit" class="btn btn-default">
+										<span class="fa fa-search"></span>
+									</button>
+								</form>
+							</li>
+						</ul>
+						<!--最新-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-heading">
+								<h3><span class="fa fa-calendar"></span> 最新内容</h3></li>
+							<li class="list-group-item">
+								<a href="article3.html" class="row-1">我们在夏天的风里握别，说一声珍重，再见</a>
+							</li>
+							<li class="list-group-item">
+								<a href="article.html" class="row-1">天很高，很蓝，栀子花的香气在风中飘散</a>
+							</li>
+							<li class="list-group-item">
+								<a href="article2.html" class="row-1">我们毕业了</a>
+							</li>
+							<li class="list-group-item">
+								<a href="article.html" class="row-1">人各有命，命中注定，各安天分</a>
+							</li>
+							<li class="list-group-item">
+								<a href="article2.html" class="row-1">我们的毕业季</a>
+							</li>
+						</ul>
+						<!--评论-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-heading">
+								<h3><span class="fa fa-comment-o"></span> 评论最热</h3></li>
+							<li class="list-group-item">
+								<a href="article3.html" class="row-1">相聚太短，还没来得及品味，你我已各自远走天涯</a>
+							</li>
+							<li class="list-group-item">
+								<a href="article.html" class="row-1">终于还是要说再见了，在这个苍茫的夏天</a>
+							</li>
+							<li class="list-group-item">
+								<a href="article2.html" class="row-1">我们的毕业季</a>
+							</li>
+							<li class="list-group-item">
+								<a href="article3.html" class="row-1">天很高，很蓝，栀子花的香气在风中飘散</a>
+							</li>
+							<li class="list-group-item">
+								<a href="article.html" class="row-1">在分别那天，也许是晴空万里，也许是乌云密布</a>
+							</li>
+						</ul>
+						<!--浏览-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-heading">
+								<h3><span class="fa fa-eye"></span> 浏览最多</h3></li>
+							<li class="list-group-item">
+								<a href="article2.html" class="row-1">毕业季，醉青春</a>
+							</li>
+							<li class="list-group-item">
+								<a href="article3.html" class="row-1">又是一年毕业季</a>
+							</li>
+							<li class="list-group-item">
+								<a href="article.html" class="row-1">人各有命，命中注定，各安天分</a>
+							</li>
+							<li class="list-group-item">
+								<a href="article2.html" class="row-1"> 勿忘初心，求得始终</a>
+							</li>
+							<li class="list-group-item">
+								<a href="article3.html" class="row-1">毕业季我们许下的愿望，奔赴心中的象牙塔</a>
+							</li>
+						</ul>
+						<!--分类-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-heading">
+								<h3><span class="fa fa-tag"></span> 分类标签</h3></li>
+							<li class="list-group-item"><a class="row-1" href="list.html?tid=12">学生(6)</a></li>
+							<li class="list-group-item"><a class="row-1" href="list.html?tid=49">毕业(5)</a></li>
+							<li class="list-group-item"><a class="row-1" href="list.html?tid=28">就业(4)</a></li>
+							<li class="list-group-item"><a class="row-1" href="list.html?tid=25">分离(3)</a></li>
+							<li class="list-group-item"><a class="row-1" href="list.html?tid=53">朋友(5)</a></li>
+						</ul>
+						<!--链接-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-heading">
+								<h3><span class="fa fa-link"></span> 友情链接</h3></li>
+							<li class="list-group-item"><a target="_blank" href="http://www.163.com">网易</a></li>
+							<li class="list-group-item"><a target="_blank" href="http://www.baidu.com">百度</a></li>
+							<li class="list-group-item"><a target="_blank" href="http://cn.bing.com/">必应</a></li>
+							<li class="list-group-item"><a target="_blank" href="http://www.qq.com">腾讯</a></li>
+							<li class="list-group-item"><a target="_blank" href="http://www.jd.com">京东</a></li>
+							<li class="list-group-item"><a target="_blank" href="http://www.taobao.com">淘宝</a></li>
+							<li class="list-group-item"><a target="_blank" href="http://www.tmall.com">天猫</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--网页底部， class.well 用于设置背景效果-->
+		<footer class="well">
+			<!-- class.container 的作用是进行居中布局 -->
+			<div class="container">
+				<b>有人笑着说解脱,有人哭着说舍不得,这就是我们的毕业季!
+      </b>
+     
+			</div>
+		</footer>
+
+	</body>
+	<script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
+	<script type="text/javascript" src="bootstrap3/js/holder.js"></script>
+	<script type="text/javascript" src="bootstrap3/js/html5shiv.min.js"></script>
+	<script type="text/javascript" src="bootstrap3/js/css3-mediaqueries.js"></script>
+	<script type="text/javascript" src="bootstrap3/js/respond.min.js"></script>
+
+</html>

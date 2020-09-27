@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>益聊论坛</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<!-- 自定义样式 -->
+		<link rel="stylesheet" type="text/css" href="css/layout3.css" />
+	</head>
+
+	<body>
+		<!--网页最上方的留白-->
+		<header>
+			<!-- class.container 容器定位 的作用是进行居中布局 -->
+			<div class="container">
+				<!-- pull-right 向右对齐  -->
+				<span class="pull-right"><small>欢迎登录</small> </span>
+			</div>
+		</header>
+		<!--网页 导航栏 在layout.css 文件中设置在背景图片-->
+		<nav>
+			<!-- class.container 容器定位 用于设置内容居中 -->
+			<div class="container">
+				<h1>
+        <b>益聊论坛</b> <small>有人笑着说解脱,有人哭着说舍不得,这就是我们的毕业季!</small>
+      </h1>
+
+				<!--导航栏-->
+				<div>
+					<!-- class="nav navbar-nav" 定义导航条 -->
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">论坛首页</a></li>
+				        <li><a href="list.html">论坛文章</a></li>
+				        <li><a href="send.html">发布论坛</a></li>
+				        <li><a href="prize.html">幸运抽奖</a></li>
+				        <li><a href="address.html">收货地址</a></li>
+					</ul>
+					<!-- class="nav navbar-nav" 定义导航条 向右侧浮动 -->
+					<ul class="nav navbar-nav navbar-right">
+						<!-- 导航条中的文字使用 class="navbar-text" 样式 -->
+						<li><span class="navbar-text">用户：</span></li>
+						<li><a href="login.html">退出论坛</a></li>
+					</ul>
+				</div>
+				<!-- /导航栏 -->
+			</div>
+		</nav>
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+						<!--文章标题-->
+						<h2 th:text=${a.title} class="page-header">
+							岁月如歌，我们的欢笑洒遍校园的每个角落
+						</h2>
+						<!--文章信息-->
+						<div class="gray">
+							<span th:text="${a.userName}+'最后修改于' +${a.updatedStr} ">admin最后修改于2019-11-23 11:06</span>
+							<span class="pull-right"> 
+								<span class="fa fa-eye" th:text=${a.viewCount}> 13</span>
+							<span class="fa fa-comment-o" th:text=${a.commentCount}> 4</span>
+							</span>
+						</div>
+						<!--文章配图-->
+						<img
+                         th:src="@{'images/'+${a.imgName}}"
+                         src="images/img11.jpg" class="img-rounded img-responsive center-block" />
+						<!--文章正文-->
+                        <p th:text=${a.content}></p>
+    						<h3 th:remove="all">我喜欢这篇文章</h3>
+    						<p th:remove="all"><em>首先感觉：很符合我们现在的状况</em></p>
+    						<p th:remove="all"><strong>故事梗概：</strong>毕业典礼是很重要的纪念，真正的青春就此告别，从此之后天涯海角，
+
+再见面的时候可能已经青丝变白发，甚至有些人再也不会相见。毕业了，你们都要比我先离开，我要看着
+
+你们好好的离开，谁都不准回头看我，我怕你们看到我哭了，就走不了了，也怕“再见”以后变成“再也
+
+不见”。毕业如同一杯茶，与你品了半盏时间。未尝时香飘十里，诱人深念；浅尝时清爽可口，让人喜爱
+
+；待要喝完时，才发觉是一杯涩茶，最后苦不堪言，终是离别。离别不是结束，而是美丽思念的开始；海
+
+内存知己，天涯若比邻；送君千里，当需一别。 </p>
+    						<p th:remove="all">过多的剧透我就不做了~</p>
+    						<p th:remove="all">还是希望大家自己去看看~</p>
+    						<p th:remove="all"><strong>浏览器均能搜索到</strong></p>
+						<!--文章标签-->
+						<div>
+                            <span th:each="t : ${a.tags}">
+							 <a th:text=${t.title} class="btn btn-info btn-xs" href="list.html?tid=49">人物</a>
+                            </span> 
+							<a th:remove="all" class="btn btn-info btn-xs" href="list.html?tid=55">学生</a>
+						</div>
+						<!--其他文章的引导链接-->
+						<h3>文章导读：</h3>
+						<ul>
+							<li class="row-1">
+								<a href="article2.html">前一篇：毕业季经典祝福：青春不散场</a>
+							</li>
+							<li class="row-1">
+								<a href="article3.html">后一篇：青春绽放 挥别四载师生情 梦想领航 萧红学子展风流——萧红</a>
+							</li>
+						</ul>
+						<h3>相关阅读：</h3>
+						<ul>
+							<li class="row-1">
+								<a href="article.html?aid=39">
+								此去年年，风雨与谁同路
+								</a>
+							</li>
+							<li class="row-1">
+								<a href="article.html?aid=36">
+								六月，总要曲终人散
+								</a>
+							</li>
+							<li class="row-1">
+								<a href="article.html?aid=2">
+								那些年的死党
+								</a>
+							</li>
+							<li class="row-1">
+								<a href="article.html?aid=25">
+								终于还是要说再见了，在这个苍茫的夏天
+								</a>
+							</li>
+							<li class="row-1">
+								<a href="article.html?aid=7">
+								毕业了！真的要走了
+								</a>
+							</li>
+						</ul>
+						<h3>随机阅读：</h3>
+						<ul>
+							<li class="row-1">
+								<a href="article.html?aid=2">
+								所有的离开都是为了更好的相遇
+								</a>
+							</li>
+							<li class="row-1">
+								<a href="article.html?aid=30">
+								一念起你的安好，我的世界每天都是晴天
+								</a>
+							</li>
+							<li class="row-1">
+								<a href="article.html?aid=27">
+								相聚太短，还没来得及品味，你我已各自远走天涯
+								</a>
+							</li>
+							<li class="row-1">
+								<a href="article.html?aid=20">
+								勿忘初心，求得始终
+								</a>
+							</li>
+							<li class="row-1">
+								<a href="article.html?aid=40">
+								若是再次相遇，谁还记得谁？
+								</a>
+							</li>
+						</ul>
+						<!--评论开始-->
+						<h3>评论：</h3>
+						<!--评论1-->
+						<div class="media">
+							<div class="media-left col-md-1">
+								<img class="media-object img-responsive" src="images/default.jpg">
+							</div>
+							<div class="media-body col-md-11">
+								<div>
+									<span class="gray">
+										2019-11-23 11:44:
+									</span>
+									<span class="pull-right">
+										<a href="javascript:void(0)" class="recomment">回复</a>
+									</span>
+								</div>
+								<h4 class="media-heading">admin:愿在彼此看不到的时光里,我们能够成为完美的自己</h4>
+								<div class="unshow">
+									<form role="form" action="article.html">
+										<div class="form-group">
+											<input type="hidden" name="reCommentId" value="51" />
+											<input type="hidden" name="reCommentName" value="admin" />
+											<input type="hidden" name="commentOnId" value="36" />
+											<textarea name="commentContent" id="commentContent" class="form-control" rows="5"></textarea>
+											<span class="pull-right"> <input type="button"
+															class="btn btn-primary mymargin btn-xs subcomm" value="提交"></span>
+											<span class="msg"></span>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<!--评论2-->
+						<div class="media">
+							<div class="media-left col-md-1">
+								<img class="media-object img-responsive" src="images/default.jpg">
+							</div>
+							<div class="media-body col-md-11">
+								<div>
+									<span class="gray">
+										2019-11-23 11:45 @admin :
+									</span>
+									<span class="pull-right">
+										<a href="javascript:void(0)" class="recomment">回复</a>
+									</span>
+								</div>
+								<h4 class="media-heading">rudy:青春依旧，友谊长存</h4>
+								<div class="unshow">
+									<form role="form" action="article.html">
+										<div class="form-group">
+											<input type="hidden" name="reCommentId" value="51" />
+											<input type="hidden" name="reCommentName" value="admin" />
+											<input type="hidden" name="commentOnId" value="36" />
+											<textarea name="commentContent" id="commentContent" class="form-control" rows="5"></textarea>
+											<span class="pull-right"> <input type="button"
+															class="btn btn-primary mymargin btn-xs subcomm" value="提交"></span>
+											<span class="msg"></span>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<!--评论3-->
+						<div class="media">
+							<div class="media-left col-md-1">
+								<img class="media-object img-responsive" src="images/default.jpg">
+							</div>
+							<div class="media-body col-md-11">
+								<div>
+									<span class="gray">
+										2019-11-23 11:47 @admin :
+									</span>
+									<span class="pull-right">
+										<a href="javascript:void(0)" class="recomment">回复</a>
+									</span>
+								</div>
+								<h4 class="media-heading">剑走偏锋:致青春毕业季</h4>
+								<div class="unshow">
+									<form role="form" action="article.html">
+										<div class="form-group">
+											<input type="hidden" name="reCommentId" value="51" />
+											<input type="hidden" name="reCommentName" value="admin" />
+											<input type="hidden" name="commentOnId" value="36" />
+											<textarea name="commentContent" id="commentContent" class="form-control" rows="5"></textarea>
+											<span class="pull-right"> <input type="button"
+															class="btn btn-primary mymargin btn-xs subcomm" value="提交"></span>
+											<span class="msg"></span>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<!--评论4-->
+						<div class="media">
+							<div class="media-left col-md-1">
+								<img class="media-object img-responsive" src="images/default.jpg">
+							</div>
+							<div class="media-body col-md-11">
+								<div>
+									<span class="gray">
+										2019-11-23 11:47 :
+									</span>
+									<span class="pull-right">
+										<a href="javascript:void(0)" class="recomment">回复</a>
+									</span>
+								</div>
+								<h4 class="media-heading">剑走偏锋:毕业季，醉青春</h4>
+								<div class="unshow">
+									<form role="form" action="article.html">
+										<div class="form-group">
+											<input type="hidden" name="reCommentId" value="51" />
+											<input type="hidden" name="reCommentName" value="admin" />
+											<input type="hidden" name="commentOnId" value="36" />
+											<textarea name="commentContent" id="commentContent" class="form-control" rows="5"></textarea>
+											<span class="pull-right"> <input type="button"
+															class="btn btn-primary mymargin btn-xs subcomm" value="提交"></span>
+											<span class="msg"></span>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<form role="form" action="article.html">
+							<div class="form-group">
+								<input type="hidden" name="reCommentId" value="51" />
+								<input type="hidden" name="reCommentName" value="admin" />
+								<input type="hidden" name="commentOnId" value="36" />
+								<textarea name="commentContent" id="commentContent" class="form-control" rows="5"></textarea>
+								<span class="pull-right"> <input type="button"
+															class="btn btn-primary mymargin btn-xs subcomm" value="提交"></span>
+								<span class="msg"></span>
+							</div>
+						</form>
+
+					</div>
+					<!--右侧内容开始-->
+					<div class="col-md-3">
+
+						<h2 class="page-header">
+							<span class="fa fa-thumbs-o-up" ></span> 推荐阅读
+						</h2>
+						<!--搜索-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-heading">
+								<h3><span class="fa fa-search"></span> 文章搜索</h3></li>
+							<li class="list-group-item">
+								<!-- form-inline: 声明行内横向表单  -->
+								<form class="form-inline" action="list.html" method="get">
+									<!-- form-group 定义一项输入数据，必须包含label标签和input标签 -->
+									<div class="form-group">
+										<!-- 通过为 label 设置 .sr-only 类将其隐藏 -->
+										<label class="sr-only" for="title">请输入文章标题</label>
+										<!-- form-control 声明表单输入控件，用在input元素上 -->
+										<input type="text" class="form-control" id="title" name="title" placeholder="请输入文章标题">
+									</div>
+									<button type="submit" class="btn btn-default">
+										<span class="fa fa-search"></span>
+									</button>
+								</form>
+							</li>
+						</ul>
+						<!--最新-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-heading">
+								<h3><span class="fa fa-calendar"></span> 最新内容</h3></li>
+							<li class="list-group-item">
+								<a class="row-1" href="article3.html">此去年年，风雨与谁同路</a>
+							</li>
+							<li class="list-group-item">
+								<a class="row-1" href="article.html">同窗是缘分的引子，彼此做对方的影子</a>
+							</li>
+							<li class="list-group-item">
+								<a class="row-1" href="article2.html">岁月如歌，我们的欢笑洒遍校园的每个角落</a>
+							</li>
+							<li class="list-group-item">
+								<a class="row-1" href="article.html">希望我们都有着最美好的未来</a>
+							</li>
+							<li class="list-group-item">
+								<a class="row-1" href="article2.html">那些年的死党</a>
+							</li>
+						</ul>
+						<!--评论-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-heading">
+								<h3><span class="fa fa-comment-o"></span> 评论最热</h3></li>
+							<li class="list-group-item">
+								<a class="row-1" href="article3.html">我们的毕业季</a>
+							</li>
+							<li class="list-group-item">
+								<a class="row-1" href="article.html">毕业了！真的要走了</a>
+							</li>
+							<li class="list-group-item ">
+								<a class="row-1" href="article2.html">青春依旧，友谊长存</a>
+							</li>
+							<li class="list-group-item">
+								<a class="row-1" href="article3.html">人各有命，命中注定，各安天分</a>
+							</li>
+							<li class="list-group-item">
+								<a class="row-1" href="article.html">时光真是匆匆，眨眼间，毕业了</a>
+							</li>
+						</ul>
+						<!--浏览-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-heading">
+								<h3><span class="fa fa-eye"></span> 浏览最多</h3></li>
+							<li class="list-group-item">
+								<a class="row-1" href="article2.html">在分别那天，也许是晴空万里</a>
+							</li>
+							<li class="list-group-item">
+								<a class="row-1" href="article3.html">毕业了！真的要走了</a>
+							</li>
+							<li class="list-group-item">
+								<a class="row-1" href="article.html">人各有命，命中注定，各安天分</a>
+							</li>
+							<li class="list-group-item">
+								<a class="row-1" href="article2.html"> 青春依旧，友谊长存</a>
+							</li>
+							<li class="list-group-item">
+								<a class="row-1" href="article3.html">致青春毕业季</a>
+							</li>
+						</ul>
+						<!--分类-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-heading">
+								<h3><span class="fa fa-tag"></span> 分类标签</h3></li>
+							<li class="list-group-item"><a class="row-1" href="article2.html">学生(6)</a></li>
+							<li class="list-group-item"><a class="row-1" href="article4.html">毕业(5)</a></li>
+							<li class="list-group-item"><a class="row-1" href="article8.html">朋友(4)</a></li>
+							<li class="list-group-item"><a class="row-1" href="article7.html">家人(3)</a></li>
+							<li class="list-group-item"><a class="row-1" href="article6.html">工作(5)</a></li>
+						</ul>
+						<!--链接-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-heading">
+								<h3><span class="fa fa-link"></span> 友情链接</h3></li>
+							<li class="list-group-item"><a target="_blank" href="http://www.163.com">网易</a></li>
+							<li class="list-group-item"><a target="_blank" href="http://www.baidu.com">百度</a></li>
+							<li class="list-group-item"><a target="_blank" href="http://cn.bing.com/">必应</a></li>
+							<li class="list-group-item"><a target="_blank" href="http://www.qq.com">腾讯</a></li>
+							<li class="list-group-item"><a target="_blank" href="http://www.jd.com">京东</a></li>
+							<li class="list-group-item"><a target="_blank" href="http://www.taobao.com">淘宝</a></li>
+							<li class="list-group-item"><a target="_blank" href="http://www.tmall.com">天猫</a></li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+			<section>
+				<!--网页底部， class.well 用于设置背景效果-->
+				<footer class="well">
+					<!-- class.container 的作用是进行居中布局 -->
+					<div class="container">
+						 <b>有人笑着说解脱,有人哭着说舍不得,这就是我们的毕业季!</b>
+					</div>
+				</footer>
+	</body>
+	<script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
+	<script type="text/javascript" src="bootstrap3/js/holder.js"></script>
+	<script type="text/javascript" src="bootstrap3/js/html5shiv.min.js"></script>
+	<script type="text/javascript" src="bootstrap3/js/css3-mediaqueries.js"></script>
+	<script type="text/javascript" src="bootstrap3/js/respond.min.js"></script>
+
+</html>

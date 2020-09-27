@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!--edge浏览器H5兼容设置-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--360浏览器H5兼容设置-->
+<meta name="renderer" content="webkit" />
+<title>益聊论坛</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--导入核心文件-->
+<script th:src="@{bootstrap3/js/holder.js}"
+	src="bootstrap3/js/holder.js"></script>
+<link href="bootstrap3/css/bootstrap.css" rel="stylesheet"
+	type="text/css">
+<script src="bootstrap3/jquery-1.9.1.min.js"></script>
+<script src="bootstrap3/js/bootstrap.js"></script>
+<!-- 字体图标 -->
+<link rel="stylesheet"
+	href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+<link rel="stylesheet" href="css/layout.css" />
+<script type="text/javascript" src="js/myjs.js"></script>
+<script type="text/javascript" src="js/comm.js"></script>
+</head>
+<body>
+	<!--网页最上方的留白-->
+	<header>
+    <!-- 为了居中 -->
+    <div class="container">
+      <div class="text-right">
+        <small>graduate</small> <b>有人笑着说解脱,有人哭着说舍不得,这就是我们的毕业季!</b>
+      </div>
+    </div>
+  </header>
+  <nav>
+    <!--导航标签 -->
+    <div class="container">
+      <h1>
+        <b>益聊论坛</b> <small>人生匆匆,且行且珍惜.</small>
+      </h1>
+      <!-- 导航条 -->
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">论坛首页</a></li>
+				        <li><a href="list.html">论坛文章</a></li>
+				        <li><a href="send.html">发布论坛</a></li>
+				        <li><a href="prize.html">幸运抽奖</a></li>
+				        <li><a href="address.html">收货地址</a></li>
+      </ul>
+      <!-- 右侧导航条 -->
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <!-- 导航条中出现文本时按照以下写法 -->
+        </li>
+        <li><a href="login.html">退出登录</a></li>
+      </ul>
+    </div>
+  </nav>
+	<div class="container">
+		<div class="row">
+			<!--左侧主要内容-->
+			<div class="col-md-offset-2 col-md-8">
+				<div class="bs-docs-section">
+					<h2 class="page-header">
+						<span class="fa fa-list"></span> 发布论坛
+					</h2>
+					<form action="SendActionServlet">
+						<div class="form-group">
+							<label for="title">标题</label> <input type="text"
+								class="form-control" id="title" name="title"
+								placeholder="请输入文章标题">
+						</div>
+						<div class="form-group">
+							<label for="aabstract">摘要</label> <input type="text"
+								class="form-control" id="aabstract" name="abs"
+								placeholder="请输入文章摘要">
+						</div>
+						<div class="form-group">
+							<label for="aabstract">正文</label>
+							<textarea class="form-control" rows="6" id="content"
+								name="content"></textarea>
+						</div>
+
+						<div class="form-group">
+							<label for="imgName">选择图片</label> <input type="file" id="imgName"
+								name="imgName">
+						</div>
+						<div class="checkbox">
+							<label> <input type="checkbox" name="putTop" id="putTop">置顶显示
+							</label>
+						</div>
+						<button type="submit" class="btn btn-default">发布论坛</button>
+					</form>
+				</div>
+			</div>
+			<!--左侧内容结束-->
+			<!--右侧内容开始-->
+
+		</div>
+	</div>
+</body>
+
+</html>
